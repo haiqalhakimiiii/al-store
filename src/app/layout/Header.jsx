@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export function Header() {
+    const [isLogin, setIsLogin] = useState(false);
+
     return (
         <>
             <nav className="bg-[#301934] text-white">
@@ -9,9 +12,7 @@ export function Header() {
                         <div>
                             <Link to="/">Home</Link>
                         </div>
-                        <div>
-                            <Link to="/profile">Profile</Link>
-                        </div>
+                        <div>{isLogin ? <Link to="/profile">Profile</Link> : 'Login'}</div>
                     </div>
                 </div>
             </nav>
