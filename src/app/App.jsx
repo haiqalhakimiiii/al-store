@@ -30,7 +30,7 @@ function App() {
     return (
         <>
             <Header />
-            <div className="w-3/4 mx-auto h-screen">{routes}</div>
+            <div className="w-3/5 mx-auto">{routes}</div>
             <Footer />
         </>
     );
