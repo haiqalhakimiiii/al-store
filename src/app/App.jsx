@@ -1,6 +1,5 @@
 import './App.css';
 import { Header } from './layout/Header';
-import { Footer } from './layout/Footer';
 import { useRoutes } from 'react-router-dom';
 import { Landing } from './pages/Landing';
 import { ProductDetail } from './pages/ProductDetails';
