@@ -31,7 +31,7 @@ function App() {
         <>
             <Header />
             <div className="w-3/5 mx-auto">{routes}</div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }
