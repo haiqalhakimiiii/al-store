@@ -6,7 +6,7 @@ export function Header() {
 
     return (
         <>
-            <nav className="bg-[#301934] text-white">
+            <nav className="bg-[#382a81] text-white">
                 <div className="w-3/5 mx-auto">
                     <div className="flex gap-4 justify-between py-5">
                         <div>
