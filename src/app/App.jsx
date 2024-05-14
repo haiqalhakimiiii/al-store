@@ -5,6 +5,10 @@ import { Landing } from './pages/Landing';
 import { ProductDetail } from './pages/ProductDetails';
 import { Profile } from './pages/Profile';
 import { NotFound } from './pages/NotFound';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+
+// library.add(faSortUp,faSortDown);
 
 function App() {
     const routes = useRoutes([

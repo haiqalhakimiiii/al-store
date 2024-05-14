@@ -1,27 +1,38 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { Sort } from './Sort';
 
 export function ProductList() {
+    const baseUrl = 'https://fakestoreapi.com';
+
     const [products, setProducts] = useState([]);
     const [productCount, setProductCount] = useState(6);
+    const [sortOrder, setSortOrder] = useState('');
+
+    const fetchProducts = useCallback(async ()=> {
+        const response = await fetch(`${baseUrl}/products?limit=${productCount}&sort=${sortOrder}`);
+        const result = await response.json();
+        setProducts(result);
+    },[productCount, sortOrder])
 
     useEffect(() => {
-        async function fetchProducts() {
-            const response = await fetch(`https://fakestoreapi.com/products?limit=${productCount}`);
-            const result = await response.json();
-            setProducts(result);
-        }
         fetchProducts();
-    }, [productCount]);
+    }, [fetchProducts]);
 
     function viewMore() {
         setProductCount((prev) => prev + 6);
     }
 
+    function handleSort(value) {
+        setSortOrder(value);
+    }
+
     return (
         <>
             <div className="py-10">
-                <p className="font-bold text-2xl mb-3 text-[#382a81]">PRODUCTS OF THE DAY</p>
+                <div className="flex justify-between">
+                    <p className="font-bold text-2xl mb-3 text-[#382a81]">PRODUCTS OF THE DAY</p>
+                    <Sort handleSort={handleSort} />
+                </div>
                 <div className="grid grid-cols-6 gap-4">
                     {products.map((product) => (
                         <div key={product.id} className="basis-1/5 cursor-pointer">
