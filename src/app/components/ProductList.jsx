@@ -33,6 +33,8 @@ export function ProductList() {
         setSortOrder(value);
     }
 
+    // THIS NEW SET GIT CONFIG
+
     return (
         <>
             <div className="py-10">
