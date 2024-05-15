@@ -43,18 +43,18 @@ export function ProductList() {
 
                 {isLoading ? (
                     <div className="mx-auto text-center">
-                        <Loading />
+                        <Loading count={productCount} />
                     </div>
                 ) : (
                     <>
                         <div className="grid grid-cols-6 gap-4">
                             {products.map((product) => (
-                                <div key={product.id} className="basis-1/5 cursor-pointer">
+                                <div key={product.id} className="cursor-pointer">
                                     <div className="w-50 h-80 shadow-md border hover:border-[#301934]">
                                         <div className="flex flex-col justify-between h-full bg-white">
                                             <img
                                                 src={product.image}
-                                                className="w-60 h-60 object-contain"
+                                                className="w-50 h-60 object-contain"
                                                 alt="Product Image"
                                             />
 
