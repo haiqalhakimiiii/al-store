@@ -3,7 +3,7 @@ export function Loading({ count }) {
         let elements = [];
         for (let i = 0; i < count; i++) {
             elements.push(
-                <div className="w-50 h-80 shadow-md border">
+                <div key={i} className="w-50 h-80 shadow-md border">
                     <div className="animate-pulse flex flex-col justify-between bg-white h-full">
                         <div className="w-full h-5/6 bg-[#301934]"></div>
                         <div className="w-full h-1/6 bg-gray-100 px-2 py-2">
