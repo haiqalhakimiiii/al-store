@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { baseUrl } from '../components/ProductList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faMinus, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export function ProductDetail() {
     const { id } = useParams();
@@ -27,12 +27,12 @@ export function ProductDetail() {
     }
 
     function addToCart(count) {
-        console.log(`added to cart with count of ${count}`)
+        console.log(`added to cart with count of ${count}`);
     }
 
     return (
         <>
-            {productDetails && (
+            {productDetails ? (
                 <div className="py-10">
                     <p className="font-bold text-2xl mb-3 text-[#382a81]">{productDetails.title}</p>
                     <div className="pt-2 flex gap-5">
@@ -88,13 +88,19 @@ export function ProductDetail() {
                                     </div>
                                 </div>
                                 <div className="mt-3">
-                                    <button className="bg-[#382a81] w-[10rem] h-[2.5rem] rounded text-white" onClick={() => addToCart(count)}>
+                                    <button
+                                        className="bg-[#382a81] w-[10rem] h-[2.5rem] rounded text-white"
+                                        onClick={() => addToCart(count)}>
                                         Add to Card <FontAwesomeIcon icon={faCartPlus} />
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            ) : (
+                <div className='flex justify-center mt-[10rem]'>
+                    <FontAwesomeIcon icon={faSpinner} spin size="2xl" />
                 </div>
             )}
         </>
