@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { baseUrl } from '../components/ProductList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faMinus, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { SimilarProduct } from '../components/SimilarProduct';
 
 export function ProductDetail() {
     const { id } = useParams();
@@ -96,6 +97,9 @@ export function ProductDetail() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className='mt-[5rem]'>
+                        <SimilarProduct category={productDetails.category} currentProduct={productDetails.id} />
                     </div>
                 </div>
             ) : (
