@@ -37,8 +37,8 @@ export function ProductList() {
     return (
         <>
             <div className="py-10">
-                <div className="flex justify-between">
-                    <p className="font-bold text-2xl mb-3 text-[#382a81]">PRODUCTS OF THE DAY</p>
+                <div className="flex justify-between items-center mb-3">
+                    <p className="font-bold text-2xl text-[#382a81]">PRODUCTS OF THE DAY</p>
                     <Sort handleSort={handleSort} />
                 </div>
 
