@@ -5,7 +5,7 @@ export function ProductCard({ products }) {
         <>
             <div className="grid grid-cols-6 gap-4">
                 {products.map((product) => (
-                    <Link key={product.id} to={`product-detail/${product.id}`}>
+                    <Link key={product.id} to={`/product-detail/${product.id}`}>
                         <div className="cursor-pointer">
                             <div className="w-50 h-80 shadow-md border hover:border-[#301934]">
                                 <div className="flex flex-col justify-between h-full bg-white">

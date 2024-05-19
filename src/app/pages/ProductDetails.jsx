@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { baseUrl } from '../components/ProductList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus, faMinus, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { SimilarProduct } from '../components/SimilarProduct';
+import { SpinnerLoading } from '../components/SpinnerLoading';
 
 export function ProductDetail() {
     const { id } = useParams();
@@ -14,7 +15,6 @@ export function ProductDetail() {
         fetch(`${baseUrl}/products/${id}`)
             .then((response) => response.json())
             .then((result) => {
-                console.log(result);
                 setProductDetails(result);
             });
     }, [id]);
@@ -103,9 +103,7 @@ export function ProductDetail() {
                     </div>
                 </div>
             ) : (
-                <div className='flex justify-center mt-[10rem]'>
-                    <FontAwesomeIcon icon={faSpinner} spin size="2xl" />
-                </div>
+                <SpinnerLoading />
             )}
         </>
     );
