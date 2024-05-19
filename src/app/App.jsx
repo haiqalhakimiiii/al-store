@@ -33,7 +33,7 @@ function App() {
     return (
         <>
             <Header />
-            <div className="w-3/5 mx-auto">{routes}</div>
+            <div className="w-3/5 mx-auto max-[425px]:w-full max-[425px]:px-2">{routes}</div>
             {/* <Footer /> */}
         </>
     );

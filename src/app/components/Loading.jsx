@@ -23,7 +23,7 @@ export function Loading({ count }) {
 
     return (
         <>
-            <div className="grid grid-cols-6 gap-4">{cardLoader()}</div>
+            <div className="grid grid-cols-6 gap-4 max-[1440px]:grid-cols-4 max-[1024px]:grid-cols-3 max-[768px]:grid-cols-2">{cardLoader()}</div>
         </>
     );
 }

@@ -36,15 +36,15 @@ export function ProductDetail() {
             {productDetails ? (
                 <div className="py-10">
                     <p className="font-bold text-2xl mb-3 text-[#382a81]">{productDetails.title}</p>
-                    <div className="pt-2 flex gap-5">
-                        <div className="w-1/4 bg-white p-10">
+                    <div className="pt-2 flex gap-5 max-[425px]:flex-col">
+                        <div className="w-1/4 max-[1440px]:w-2/4 max-[425px]:w-full bg-white p-10">
                             <img
                                 src={productDetails.image}
                                 className="w-full h-full object-contain"
                                 alt="Product Image"
                             />
                         </div>
-                        <div className="w-2/4 flex justify-center items-center">
+                        <div className="w-2/4 max-[425px]:w-full flex justify-center items-center">
                             <div>
                                 <div>
                                     <p className="text-[#382a81] font-semibold">Description:</p>
@@ -66,31 +66,33 @@ export function ProductDetail() {
                                         </span>
                                     </p>
                                 </div>
-                                <div className="mt-3">
-                                    <span className="text-[#382a81] text-3xl font-bold tracking-wide">
-                                        RM {productDetails.price.toFixed(2)}
-                                    </span>
-                                </div>
-                                <div className="mt-3 h-9">
-                                    <div className="flex h-full">
-                                        <div
-                                            className="border border-[#382a81] w-10 flex justify-center items-center cursor-pointer"
-                                            onClick={increment}>
-                                            <FontAwesomeIcon icon={faPlus} />
-                                        </div>
-                                        <div className="border-y border-[#382a81] w-20 flex justify-center items-center">
-                                            <p>{count}</p>
-                                        </div>
-                                        <div
-                                            className="border border-[#382a81] w-10 flex justify-center items-center cursor-pointer"
-                                            onClick={decrement}>
-                                            <FontAwesomeIcon icon={faMinus} />
+                                <div className='max-[425px]:flex max-[425px]:justify-between'>
+                                    <div className="mt-3">
+                                        <span className="text-[#382a81] text-3xl font-bold tracking-wide">
+                                            RM {productDetails.price.toFixed(2)}
+                                        </span>
+                                    </div>
+                                    <div className="mt-3 h-9">
+                                        <div className="flex h-full">
+                                            <div
+                                                className="border border-[#382a81] w-10 flex justify-center items-center cursor-pointer"
+                                                onClick={increment}>
+                                                <FontAwesomeIcon icon={faPlus} />
+                                            </div>
+                                            <div className="border-y border-[#382a81] w-20 flex justify-center items-center">
+                                                <p>{count}</p>
+                                            </div>
+                                            <div
+                                                className="border border-[#382a81] w-10 flex justify-center items-center cursor-pointer"
+                                                onClick={decrement}>
+                                                <FontAwesomeIcon icon={faMinus} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="mt-3">
                                     <button
-                                        className="bg-[#382a81] w-[10rem] h-[2.5rem] rounded text-white"
+                                        className="bg-[#382a81] w-[10rem] max-[425px]:w-full h-[2.5rem] rounded text-white"
                                         onClick={() => addToCart(count)}>
                                         Add to Card <FontAwesomeIcon icon={faCartPlus} />
                                     </button>
@@ -98,7 +100,7 @@ export function ProductDetail() {
                             </div>
                         </div>
                     </div>
-                    <div className='mt-[5rem]'>
+                    <div className="mt-[5rem]">
                         <SimilarProduct category={productDetails.category} currentProduct={productDetails.id} />
                     </div>
                 </div>
